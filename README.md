@@ -1,6 +1,6 @@
 # StaffScraper
 
-SyncRajo Fansub staff scraper.
+SyncRajo Fansub staff scraper using ChromeDriver and puppeteer API.
 
 # How to use
 

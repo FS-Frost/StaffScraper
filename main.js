@@ -53,8 +53,14 @@ let scrape = async () => {
 
 scrape().then((data) => {
     const date = dateFormat(new Date(), "dd-mm-yyyy");
-    const fileName = `results/Sync-Staff (${date}).json`;
+    const dir = "results";
+    const fileName = `${dir}/Sync-Staff (${date}).json`;
     const jsonString = JSON.stringify(data, null, 4);
+
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir);
+    }
+
     fs.writeFile(fileName, jsonString, (err) => {
         if (err) {
             return console.log(err);
